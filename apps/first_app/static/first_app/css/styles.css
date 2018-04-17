@@ -1,0 +1,59 @@
+.redlist {
+    color: red;
+}
+
+.greenlist{
+    color: green;
+}
+
+.bluelist {
+    color: blue;
+}
+
+.redlistBig {
+    color: red;
+    font-size: 30px;
+}
+
+.greenlistBig {
+    color: green;
+    font-size: 30px;
+}
+
+.bluelistBig {
+    color: blue;
+    font-size: 30px;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+
+.resultdiv, .formdiv {
+    display: inline-block;
+}
+
+.resultdiv {
+    height: 400px;
+    width: 592px;
+    border-left: 2px solid black;
+    vertical-align: top;
+    overflow: scroll;
+}
+
+.wrapper {
+    margin: auto;
+    width: 800px;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+.formdiv {
+    width: 200px;
+}
+
+.center {
+margin: 90px 30px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session Words</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'first_app/css/styles.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="formdiv">
+            <div class="center">
+                    <form action="/add" method="post">
+                        {% csrf_token %}
+                            <label for="word">Add a new word</label><br>
+                            <input type="text" name="word"><br>
+                            <label for="color">Choose a color:</label><br>
+                            <input type="radio" name="color" value="red" checked> Red <br>
+                            <input type="radio" name="color" value="green"> Green <br>
+                            <input type="radio" name="color" value="blue"> Blue <br>
+                            <input type="checkbox" name="fontsize" value="big"> show in BIG fonts<br>
+                            <button>Add to Session</button>
+                        </form>
+                        <form action="clear" method="post">
+                        {% csrf_token %}
+                            <button>Clear Session</button>
+                        </form>
+            </div>
+
+        </div>
+        <div class="resultdiv">
+            <ul>
+                {% for x in listofwords %}
+                    {% autoescape off %} {{x}} {% endautoescape %}
+                    {% for y in timestamps %}
+                    {{y}}
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>
